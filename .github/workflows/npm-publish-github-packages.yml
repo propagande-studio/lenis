@@ -38,17 +38,12 @@ jobs:
       packages: write
     steps:
       - uses: actions/checkout@v4
-      - name: Install pnpm
-        uses: pnpm/action-setup@v4
-        with:
-          version: 10
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'pnpm'
           registry-url: https://npm.pkg.github.com/
       - name: Publish to Github Packages
-        run: pnpm run publish:main
+        run: npm run publish:main
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
