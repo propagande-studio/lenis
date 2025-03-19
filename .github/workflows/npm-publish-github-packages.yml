@@ -16,9 +16,6 @@ jobs:
     strategy:
       matrix:
         node-version: [20]
-    permissions:
-      contents: read
-      packages: write
     steps:
       - uses: actions/checkout@v4
       - name: Install pnpm
@@ -29,10 +26,28 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          registry-url: 'https://npm.pkg.github.com'
           cache: 'pnpm'
       - name: Install dependencies
         run: pnpm install
+      - name: Build
+        run: pnpm build
+
+  publish-gpr:
+    needs: build
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [20]
+    permissions:
+      contents: read
+      packages: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: 'https://npm.pkg.github.com'
       - name: Publish to Github Packages
         run: npm run publish:main
         env:
