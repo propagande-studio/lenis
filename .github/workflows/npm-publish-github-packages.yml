@@ -48,6 +48,7 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'pnpm'
           registry-url: https://npm.pkg.github.com/
-      - run: pnpm run publish:main
+      - name: Publish to Github Packages
+        run: pnpm run publish:main
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
