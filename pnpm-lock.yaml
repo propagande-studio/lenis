@@ -34,7 +34,7 @@ importers:
     dependencies:
       lenis:
         specifier: workspace:lenis*
-        version: link:../..
+        version: link:../core
     devDependencies:
       '@types/react':
         specifier: ^19.0.7
@@ -47,13 +47,13 @@ importers:
     dependencies:
       lenis:
         specifier: workspace:lenis*
-        version: link:../..
+        version: link:../core
 
   packages/vue:
     dependencies:
       lenis:
         specifier: workspace:lenis*
-        version: link:../..
+        version: link:../core
     devDependencies:
       vue:
         specifier: ^3.5.13
@@ -81,7 +81,7 @@ importers:
         version: 5.1.8(@types/node@22.7.5)(db0@0.2.1)(ioredis@5.4.2)(jiti@2.4.2)(rollup@4.31.0)(sass@1.79.4)(terser@5.37.0)(typescript@5.7.3)(yaml@2.7.0)
       lenis:
         specifier: workspace:*
-        version: link:..
+        version: link:../packages/core
       lorem-ipsum:
         specifier: ^2.0.8
         version: 2.0.8
@@ -102,7 +102,7 @@ importers:
     dependencies:
       lenis:
         specifier: workspace:*
-        version: link:../..
+        version: link:../../packages/core
       nuxt:
         specifier: ^3.15.3
         version: 3.15.3(@parcel/watcher@2.5.1)(@types/node@22.7.5)(db0@0.2.1)(ioredis@5.4.2)(magicast@0.3.5)(rollup@4.31.0)(sass@1.79.4)(terser@5.37.0)(typescript@5.7.3)(vite@6.0.11(@types/node@22.7.5)(jiti@2.4.2)(sass@1.79.4)(terser@5.37.0)(yaml@2.7.0))(yaml@2.7.0)
