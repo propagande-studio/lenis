@@ -1,6 +1,6 @@
 {
   "name": "@propagande-studio/lenis",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "How smooth scroll should be",
   "type": "module",
   "sideEffects": false,
