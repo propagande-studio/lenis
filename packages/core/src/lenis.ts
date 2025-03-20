@@ -621,7 +621,7 @@ export class Lenis {
     if (typeof target !== 'number') return
 
     target += offset
-    target = Math.round(target)
+    target = Math.round(target * 100) / 100
 
     if (this.options.infinite) {
       if (programmatic) {
