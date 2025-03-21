@@ -429,7 +429,7 @@ export class Lenis {
     const isSyncTouch = isTouch && this.options.syncTouch
     const isTouchEnd = isTouch && event.type === 'touchend'
 
-    const hasTouchInertia = isTouchEnd && Math.abs(delta) > 0.05
+    const hasTouchInertia = isTouchEnd
 
     if (hasTouchInertia) {
       delta = this.velocity * this.options.touchInertiaMultiplier
@@ -439,7 +439,7 @@ export class Lenis {
       programmatic: false,
       ...(isSyncTouch
         ? {
-            lerp: hasTouchInertia ? this.options.syncTouchLerp : 1,
+            lerp: hasTouchInertia ? this.options.syncTouchLerp : 0.25,
             // immediate: !hasTouchInertia,
           }
         : {
